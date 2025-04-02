@@ -2,6 +2,9 @@
 
 
 #include "MyPawn.h"
+#include "MyStruct.h"
+#include "MyBackCube.h"
+#include "EnhancedInputComponent.h"
 
 // Sets default values
 AMyPawn::AMyPawn()
@@ -16,6 +19,17 @@ void AMyPawn::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	for (int32 y = 0; y < SizeData.Y; ++y)
+	{
+		for (int32 x = 0; x < SizeData.X; ++x)
+		{
+			AActor* NewActor = GetWorld()->SpawnActor(AMyBackCube::StaticClass());
+			NewActor->SetActorLocation(FVector(0.f, x * 100.f, y * 100.f));
+		}
+	}
+
+	SetActorLocation(GetStartLocation());
+	SetActorRotation(FQuat::Identity);
 }
 
 // Called every frame
@@ -29,7 +43,9 @@ void AMyPawn::Tick(float DeltaTime)
 void AMyPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
+	UEnhancedInputComponent* Input = CastChecked<UEnhancedInputComponent>(PlayerInputComponent);
 
-	
+	Input->
+	PlayerInputComponent
 }
 

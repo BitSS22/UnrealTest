@@ -9,7 +9,7 @@ void AMyGameModeBase::BeginPlay()
 {
 	Super::BeginPlay();
 
-	UMyGameInstanceSubsystem* Subsystem = GetGameInstance()->GetSubsystem<UMyGameInstanceSubsystem>();
+	/*UMyGameInstanceSubsystem* Subsystem = GetGameInstance()->GetSubsystem<UMyGameInstanceSubsystem>();
 
 	for (int32 y = 0; y < Subsystem->GetSize().Y; ++y)
 	{
@@ -18,6 +18,6 @@ void AMyGameModeBase::BeginPlay()
 			AActor* NewActor = GetWorld()->SpawnActor(AMyBackCube::StaticClass());
 			NewActor->SetActorLocation(FVector(0.f, x * 100.f, y * 100.f));
 		}
-	}
+	}*/
 	
 }

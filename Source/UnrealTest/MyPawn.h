@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
+#include "MyStruct.h"
 #include "MyPawn.generated.h"
 
 UCLASS()
@@ -25,5 +26,15 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FSize SizeData = {};
+
+	UFUNCTION(BlueprintCallable)
+	FVector GetStartLocation()
+	{
+		return FVector(-100.f, SizeData.X * 50.f, SizeData.Y * 100.f);
+	}
 
 };
