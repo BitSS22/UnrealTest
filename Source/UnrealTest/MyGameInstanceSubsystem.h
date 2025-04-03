@@ -37,4 +37,7 @@ public:
 	{
 		return FVector(-100.f, Size.X * 50.f, Size.Y * 100.f);
 	}
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UDataTable* Asset = nullptr;
 };

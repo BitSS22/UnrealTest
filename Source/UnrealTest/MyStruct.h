@@ -13,9 +13,19 @@ struct FSize : public FTableRowBase
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int X;
+	int X = 10;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int Y;
+	int Y = 10;
+};
+
+USTRUCT(BlueprintType)
+struct FData : public FTableRowBase
+{
+	GENERATED_USTRUCT_BODY()
+
+public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FString Path;
 };
 
 UCLASS()
