@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
 #include "MyStruct.h"
+#include "InputMappingContext.h"
 #include "MyPawn.generated.h"
 
 UCLASS()
@@ -37,4 +38,18 @@ public:
 		return FVector(-100.f, SizeData.X * 50.f, SizeData.Y * 100.f);
 	}
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UInputMappingContext* MappingContext = nullptr;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UInputAction* MoveInput = nullptr;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UInputAction* RotateInput = nullptr;
+
+	UFUNCTION(BlueprintCallable)
+	void Move(const FInputActionValue& Value);
+
+	UFUNCTION(BlueprintCallable)
+	void Rotate(const FInputActionValue& Value);
 };

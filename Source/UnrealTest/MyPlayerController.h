@@ -6,6 +6,7 @@
 #include "GameFramework/PlayerController.h"
 #include "MyPlayerController.generated.h"
 
+class UInputMappingContext;
 /**
  * 
  */
@@ -17,5 +18,5 @@ class UNREALTEST_API AMyPlayerController : public APlayerController
 public:
 	void BeginPlay() override;
 	void SetupInputComponent() override;
-	
+
 };

@@ -2,15 +2,18 @@
 
 
 #include "MyPlayerController.h"
+#include "InputMappingContext.h"
+#include "EnhancedInputSubsystems.h"
 
 void AMyPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
 
-	FInputModeGameAndUI GameAndUI;
-	SetInputMode(GameAndUI);
 }
 
 void AMyPlayerController::SetupInputComponent()
 {
+	Super::SetupInputComponent();
+
+
 }
